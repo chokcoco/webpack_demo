@@ -10,7 +10,8 @@ a webpack scaffold
   - 生成一个web服务器，开启实时热更新。
 
 + npm run test 测试
-  - 使用了 `--watch` 参数，实现开发时资源的增量更新输出。
+  - 使用了 `--watch` 参数，实现开发时资源的增量更新输出。
+
 + npm run build 线上
   - 资源压缩
   - 静态资源可选择带上 hash 戳值
