@@ -1,0 +1,33 @@
+body,
+html {
+    position: relative;
+    user-select: none;
+}
+
+h1 {
+    color: #333;
+
+    span {
+        color: deeppink;
+        transform: rotate(10deg);
+        user-select: none;
+    }
+}
+
+.avator {
+    width: 160px;
+    height: 160px;
+    background: url('http://pic.cnblogs.com/avatar/608782/20160411131806.png');
+}
+
+.logo {
+    width: 160px;
+    height: 160px;
+    background: url('../images/icon-wechat.png');   
+}
+
+.icon {
+    width: 8px;
+    height: 16px;
+    background: url('../images/icon-left.png');
+}

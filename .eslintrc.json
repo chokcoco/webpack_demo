@@ -1,0 +1,19 @@
+{
+    "parserOptions": {
+        "ecmaVersion": 6,
+        "sourceType": "script"
+    },
+    // 具体规则参阅 http://eslint.cn/docs/rules/
+    "rules": {
+        // 要求 return 语句要么总是指定返回的值，要么不指定
+        "consistent-return": 1,
+        // 强制分号
+        "semi": 1,
+        // default-case
+        "default-case": 1,
+        // 要求使用 === 和 !==
+        "eqeqeq": 1,
+        // 禁止出现空函数
+        "no-empty-function": 1
+    }
+}

@@ -1,0 +1,39 @@
+{
+  "name": "webpack_demo",
+  "version": "1.0.0",
+  "description": "webpack demo",
+  "main": "index.js",
+  "scripts": {
+    "dev": "webpack-dev-server --config webpack.config.js",
+    "test": "cross-env NODE_ENV=test webpack --watch --progress --hide-modules",
+    "build": "webpack --config ./webpack.config.build.js --progress --hide-modules"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "autoprefixer": "^7.1.2",
+    "autoprefixer-loader": "^3.2.0",
+    "babel-core": "^6.0.0",
+    "babel-loader": "^7.1.1",
+    "babel-polyfill": "^6.20.0",
+    "babel-preset-es2015": "^6.0.0",
+    "babel-preset-stage-3": "^6.17.0",
+    "cross-env": "^3.0.0",
+    "css-loader": "^0.23.1",
+    "eslint": "^4.2.0",
+    "eslint-loader": "^1.9.0",
+    "extract-text-webpack-plugin": "^3.0.0",
+    "extract-text-webpack-plugin-webpack-2": "^1.0.1",
+    "file-loader": "^0.8.5",
+    "html-loader": "^0.4.3",
+    "html-webpack-plugin": "^2.29.0",
+    "node-sass": "^4.5.3",
+    "path": "^0.12.7",
+    "postcss-loader": "^0.9.1",
+    "sass-loader": "^6.0.6",
+    "style-loader": "^0.13.0",
+    "url-loader": "^0.5.7",
+    "webpack": "^3.3.0",
+    "webpack-dev-server": "^2.5.1"
+  }
+}
