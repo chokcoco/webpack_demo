@@ -16,6 +16,7 @@ a webpack3 scaffold
   - 资源压缩
   - 静态资源可选择带上 hash 戳值
   - 多页面提取公共静态资源
+  - 作用域提升（webpack3新功能）
 
 ## 使用 webpack 进行开发
 
