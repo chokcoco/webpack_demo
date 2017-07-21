@@ -53,6 +53,9 @@ module.exports = {
     },
     //插件项
     plugins: [
+        // 启用作用域提升（scope hoisting）
+        new webpack.optimize.ModuleConcatenationPlugin(),
+        // 部分 loader 配置信息
         new webpack.LoaderOptionsPlugin({
             options: {
                 postcss: function () {
