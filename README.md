@@ -1,6 +1,6 @@
 # webpack_demo
 
-a webpack scaffold
+a webpack3 scaffold
 
 ## 构建方式
 
@@ -10,10 +10,13 @@ a webpack scaffold
   - 生成一个web服务器，开启实时热更新。
 
 + npm run test 测试
-  - 使用了 `--watch` 参数，实现开发时资源的增量更新。
+  - 使用了 `--watch` 参数，实现开发时资源的增量更新输出。
+
 + npm run build 线上
   - 资源压缩
   - 静态资源可选择带上 hash 戳值
+  - 多页面提取公共静态资源
+  - 作用域提升（webpack3新功能）
 
 ## 使用 webpack 进行开发
 
@@ -43,7 +46,7 @@ a webpack scaffold
 ### javascript
 + 合并、压缩
 + ES6语法（babel-loader）
-+ eslint（代码检测）
++ eslint（代码检测），可自定义检测 rules
 + 打包生成的 js 样式文件可选添加 hash 戳值
 
 ### html

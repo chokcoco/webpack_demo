@@ -63,6 +63,8 @@ module.exports = {
         }),
         // 作用域提升
         new webpack.optimize.ModuleConcatenationPlugin(),
+        // 提取代码中的公共模块
+        // new webpack.optimize.CommonsChunkPlugin(),
         // 单独抽离 CSS
         new ExtractTextPlugin('css/[name].bundle.[hash:8].css'),
         // 定义全局变量插件

@@ -11,7 +11,8 @@ var publicPath = 'http://' + host + ':' + port + '/';
 module.exports = {
     //页面入口文件配置
     entry: {
-        index: './src/index'
+        index: './src/index',
+        app: './src/app'
     },
     output: {
         path: path.resolve(__dirname, './dest'),
@@ -25,15 +26,12 @@ module.exports = {
             loader: 'style-loader!css-loader'
         }, {
             test: /\.scss$/,
-            // loader: 'style-loader!css-loader!sass-loader!postcss-loader'
             use: ExtractTextPlugin.extract({
                 fallback: 'style-loader',
-                // resolve-url-loader may be chained before sass-loader if necessary
                 use: ['css-loader', 'postcss-loader', 'sass-loader']
             })
         }, {
             test: /\.(png|jpg|gif)$/,
-            // loader: 'url-loader?limit=2048&name=images/[name].[ext]?[hash]'
             use: [{
                 loader: 'url-loader',
                 options: {
@@ -68,6 +66,13 @@ module.exports = {
                 } 
             }
         }),
+        // 提取代码中的公共模块
+        new webpack.optimize.CommonsChunkPlugin({  
+            name: "commons",
+            filename: "js/common/commons.js"
+            // Only use these entries
+            // chunks: ["app", "index"]
+        }),
         // 作用域提升
         new webpack.optimize.ModuleConcatenationPlugin(),
         // 代码热替换
@@ -80,6 +85,18 @@ module.exports = {
         new HtmlWebpackPlugin({
             filename: 'html/index.html',
             template: './src/html/index.html',
+            inject: false,
+            hash: true,
+            minify: {
+                // 移除HTML中的注释
+                removeComments: true,
+                // 删除空白符与换行符   
+                collapseWhitespace: false
+            }
+        }),
+        new HtmlWebpackPlugin({
+            filename: 'html/app.html',
+            template: './src/html/app.html',
             inject: false,
             hash: true,
             minify: {
