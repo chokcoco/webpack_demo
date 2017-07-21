@@ -1,6 +1,6 @@
 # webpack_demo
 
-a webpack scaffold
+a webpack3 scaffold
 
 ## 构建方式
 
