@@ -2,6 +2,8 @@
 
 a webpack3 scaffold .
 
+基于 Webpack3 的脚手架工具。
+
 ## 构建方式
 
 提供三种构建方式，用于不同开发场景
