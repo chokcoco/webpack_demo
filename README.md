@@ -48,7 +48,7 @@ a webpack3 scaffold .
 ### javascript
 + 合并、压缩
 + ES6语法（babel-loader）
-+ eslint（代码检测），可自定义检测 rules
++ eslint（代码检测），可自定义检测 rules，或者引入（airbnb规范）
 + 打包生成的 js 样式文件可选添加 hash 戳值
 
 ### html
