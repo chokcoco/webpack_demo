@@ -109,6 +109,7 @@ module.exports = {
                 collapseWhitespace: false
             }
         })
+        // 新增打包体积追踪
     ],
     devtool: 'source-map',
     devServer: {
