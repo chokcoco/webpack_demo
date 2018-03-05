@@ -1,6 +1,8 @@
 # webpack_demo
 
-a webpack3 scaffold
+a webpack3 scaffold .
+
+基于 Webpack3 的脚手架工具。
 
 ## 构建方式
 
@@ -23,6 +25,7 @@ a webpack3 scaffold
 + 热替换实时刷新
 + 允许错误不打断程序
 + 实时语法检测
++ 打包后文件体积分析
 
 ## 使用 webpack 打包可实现功能点
 
@@ -39,15 +42,16 @@ a webpack3 scaffold
 + 打包生成的 css 样式文件可选添加 hash 戳值
 
 ### images
-+ 压缩
++ 图片压缩
 + 可设定引用图片大小的阈值，小于这个阈值大小的图片将编码成 base64 
 + 引用图片时添加图片的 hash 值
 
 ### javascript
 + 合并、压缩
 + ES6语法（babel-loader）
-+ eslint（代码检测），可自定义检测 rules
++ eslint（代码检测），可自定义检测 rules，或者引入（airbnb规范）
 + 打包生成的 js 样式文件可选添加 hash 戳值
 
 ### html
 + 美化压缩，可选删除注释、空白符与换行
++ 打包生成新的独立的 html 文件
