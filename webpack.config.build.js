@@ -24,10 +24,8 @@ module.exports = {
             loader: 'style-loader!css-loader?minimize'
         }, {
             test: /\.scss$/,
-            // loader: 'style-loader!css-loader!sass-loader!postcss-loader'
             use: ExtractTextPlugin.extract({
                 fallback: 'style-loader',
-                // resolve-url-loader may be chained before sass-loader if necessary
                 use: ['css-loader?minimize', 'postcss-loader', 'sass-loader']
             })
         }, {
@@ -55,9 +53,11 @@ module.exports = {
         new webpack.LoaderOptionsPlugin({
             options: {
                 postcss: function() {
-                    return [autoprefixer({
-                        browsers: ['last 2 versions', 'Android >= 4.0']
-                    })];
+                    return [
+                        autoprefixer({
+                            browsers: ['last 2 versions', 'Android >= 4.0']
+                        })
+                    ];
                 }
             }
         }),
@@ -93,5 +93,5 @@ module.exports = {
             }
         })
     ],
-    devtool: 'source-map'
+    devtool: 'cheap-module-source-map'
 };

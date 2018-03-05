@@ -4,6 +4,7 @@ var fs = require('fs');
 var ExtractTextPlugin = require("extract-text-webpack-plugin");
 var autoprefixer = require('autoprefixer');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
+var BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 var host = '127.0.0.1';
 var port = '8080';
 var publicPath = 'http://' + host + ':' + port + '/';
@@ -28,7 +29,16 @@ module.exports = {
             test: /\.scss$/,
             use: ExtractTextPlugin.extract({
                 fallback: 'style-loader',
-                use: ['css-loader', 'postcss-loader', 'sass-loader']
+                use: [{
+                    loader: 'css-loader',
+                    options: {
+                        minimize: true
+                    }
+                },{
+                    loader: 'postcss-loader'
+                },{
+                    loader: 'sass-loader'
+                }]
             })
         }, {
             test: /\.(png|jpg|gif)$/,
@@ -59,22 +69,24 @@ module.exports = {
         new webpack.LoaderOptionsPlugin({
             options: {
                 postcss: function () {
-                    return [autoprefixer({
-                        browsers: ['last 2 versions', 'Android >= 4.0'],
-                        //是否美化属性值 默认：true 
-                        cascade: true,
-                        //是否去掉不必要的前缀 默认：true 
-                        remove: true
-                    })];
+                    return [
+                        autoprefixer({
+                            browsers: ['last 2 versions', 'Android >= 4.0'],
+                            //是否美化属性值 默认：true 
+                            cascade: true,
+                            //是否去掉不必要的前缀 默认：true 
+                            remove: true
+                        })
+                    ];
                 } 
             }
         }),
         // 提取代码中的公共模块
         new webpack.optimize.CommonsChunkPlugin({  
             name: "commons",
-            filename: "js/common/commons.js"
+            filename: "js/common/commons.js",
             // Only use these entries
-            // chunks: ["app", "index"]
+            chunks: ["app", "index"]
         }),
         // 作用域提升
         new webpack.optimize.ModuleConcatenationPlugin(),
@@ -108,7 +120,9 @@ module.exports = {
                 // 删除空白符与换行符   
                 collapseWhitespace: false
             }
-        })
+        }),
+        // 打包模块大小追踪
+        new BundleAnalyzerPlugin()
     ],
     devtool: 'source-map',
     devServer: {

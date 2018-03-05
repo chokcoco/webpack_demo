@@ -30,10 +30,18 @@
     "node-sass": "^4.5.3",
     "path": "^0.12.7",
     "postcss-loader": "^0.9.1",
+    "postcss-uncss": "^0.15.0",
+    "postcss-write-svg": "jonathantneal/postcss-write-svg",
     "sass-loader": "^6.0.6",
     "style-loader": "^0.13.0",
+    "uncss": "^0.15.0",
     "url-loader": "^0.5.7",
     "webpack": "^3.3.0",
     "webpack-dev-server": "^2.5.1"
+  },
+  "dependencies": {
+    "webpack-bundle-analyzer": "^2.11.1",
+    "postcss-uncss": "^0.15.0",
+    "uncss": "^0.15.0"
   }
 }
