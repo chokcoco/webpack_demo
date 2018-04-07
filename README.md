@@ -55,3 +55,5 @@ a webpack3 scaffold .
 ### html
 + 美化压缩，可选删除注释、空白符与换行
 + 打包生成新的独立的 html 文件
+
+## Webpack 4优化升级
